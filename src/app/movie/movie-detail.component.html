@@ -1,0 +1,49 @@
+<section class="list-movie">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <br>
+      </div>
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <h2 class="col-md-12">{{data.Title}}</h2>
+              <img class="col-md-4" [src]="data.Poster" (error)="changeSource($event)">
+              <div class="col-md-4">
+                <p>Actors : {{data.Actors}}</p>
+                <p>BoxOffice : {{data.BoxOffice}}</p>
+                <p>Country : {{data.Country}}</p>
+                <p>DVD : {{data.DVD}}</p>
+                <p>Director : {{data.Director}}</p>
+                <p>Genre : {{data.Genre}}</p>
+                <p>Language : {{data.Language}}</p>
+                <p>Metascore : {{data.Metascore}}</p>
+                <p>Production : {{data.Production}}</p>
+                <p>Rated : {{data.Rated}}</p>
+              </div>
+              <div class="col-md-4">
+                <p>Released : {{data.Released}}</p>
+                <p>Runtime : {{data.Runtime}}</p>
+                <p>Type : {{data.Type}}</p>
+                <p>Website : {{data.Website}}</p>
+                <p>Writer : {{data.Writer}}</p>
+                <p>Year : {{data.Year}}</p>
+                <p>imdbID : {{data.imdbID}}</p>
+                <p>imdbRating : {{data.imdbRating}}</p>
+                <p>imdbVotes : {{data.imdbVotes}}</p>
+              </div>
+              <div class="col-md-12">
+                <br>
+                <h5>Ratings :</h5>
+                <p *ngFor="let item of data.Ratings">{{item.Source}} : {{item.Value}}</p>
+                <h5>Plot :</h5>
+                <p>{{data.Plot}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

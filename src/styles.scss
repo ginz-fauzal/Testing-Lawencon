@@ -4,6 +4,11 @@
   color: whitesmoke;
 }
 
+
+.link {
+  cursor: pointer;
+}
+
 .text-center {
   text-align: center;
 }
@@ -81,7 +86,13 @@ section.list-movie {
   }
 }
 
-body {
+
+.active {
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+}
+
+.bg-header {
   background: linear-gradient(to bottom, #0062E6, #33AEFF);
 }
 

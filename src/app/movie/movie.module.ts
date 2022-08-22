@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common'
 
 import { MovieRoutingModule } from './movie-routing.module'
 import { MovieComponent } from './movie.component'
+import { MovieDetailComponent } from './movie-detail.component'
 import { LayoutComponent } from './layout.component'
 import { SharedModule } from '../shared.module'
 
@@ -18,6 +19,7 @@ import { SharedModule } from '../shared.module'
     declarations: [
         LayoutComponent,
         MovieComponent,
+        MovieDetailComponent
     ]
 })
 export class MovieModule { }

@@ -2,7 +2,7 @@
 import { first } from 'rxjs/operators'
 import { APIService } from '../_services'
 import { FormBuilder, Validators } from '@angular/forms'
-import { Router } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router'
 
 @Component({ templateUrl: 'movie.component.html' })
 export class MovieComponent implements OnInit {
@@ -19,7 +19,11 @@ export class MovieComponent implements OnInit {
     loading = false
     submitted = false
 
-    constructor(public api: APIService, private formBuilder: FormBuilder,private router: Router) {
+    constructor(
+        public api: APIService, 
+        private formBuilder: FormBuilder,
+        private router: Router,
+        private route: ActivatedRoute,) {
         this.getData()
     }
 
@@ -70,8 +74,8 @@ export class MovieComponent implements OnInit {
       }
     }
 
-    detailMovie(id:string){
-        this.router.navigateByUrl('/detailMovie', { state: { id:id } });
+    detailMovie(title:string){
+        this.router.navigate(['./detail',{title:title}], { relativeTo: this.route });
     }
 
     changeSource(event:any, poster:string) { event.target.src = "../assets/corrupt.png"; }

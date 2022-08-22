@@ -1,3 +1,41 @@
-<div class="d-sm-flex align-items-center justify-content-between mb-4">
-  <h1 class="h3 mb-0 text-gray-800">Profile</h1>
+<div id="content">
+  <div class="container-fluid">
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <br>
+            <h2 class="text-center text">Fungsi</h2>
+          </div>
+          <div class="col-lg-4">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+              <div class="input-group">
+                <input type="text" formControlName="arrayInput" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.arrayInput.errors }" placeholder="Input text . . ." />
+                <button type="submit" class="btn btn-primary">
+                  <i class="fas fa-plus"></i>
+                </button>
+                <div *ngIf="f.arrayInput.errors" class="invalid-feedback">
+                  <div *ngIf="f.arrayInput.errors">Input tidak boleh kosong.</div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-8">
+          </div>
+          <div class="col-lg-8">
+            <h5>Input</h5>
+            <p>[<span *ngFor="let item of data let last = last;">'{{item}}'{{last?'':','}} </span>]</p>
+            <button class="btn btn-primary" (click)="groupIt(temp)">
+              Grouping
+            </button>
+            <h5>Output</h5>
+            <p>[<span *ngFor="let item of hasil let last = last;">[<span
+                  *ngFor="let items of item let lasts = last;">'{{items}}'{{lasts?'':','}} </span>]{{last?'':','}} </span>]
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </div>
