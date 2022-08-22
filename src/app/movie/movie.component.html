@@ -1,0 +1,58 @@
+﻿<section class="list-movie">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <br>
+        <h2 class="text-center text">Movie List</h2>
+      </div>
+      <div class="col-lg-8">
+      </div>
+      <div class="col-lg-4">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="input-group">
+            <input type="text" formControlName="search" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.search.errors }" placeholder="Cari movie . . ." />
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-search"></i>
+            </button>
+            <div *ngIf="f.search.errors" class="invalid-feedback">
+              <div *ngIf="f.search.errors">Minimal 3 huruf untuk seacrhing.</div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div *ngFor="let item of data" class="col-sm-3">
+        <div class="card">
+          <a class="panduan" href="#" data-toggle="modal" data-target="#posterView"
+            (click)="posterChange(item.Poster,item.Title)">
+            <img class="card-img-top" [src]="item.Poster" (error)="changeSource($event, item.Poster)">
+          </a>
+          <div class="card-body">
+            <a href="#" (click)="detailMovie(item.imdbID)">
+              <h6 class="text">{{item.Title}} [{{item.Year}}]</h6>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="modal fade" id="posterView" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{titleModal}}</h5>
+      </div>
+      <div class="modal-body">
+        <img class="img-modal" [src]="posterModal" (error)="changeSource($event, posterModal)">
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
