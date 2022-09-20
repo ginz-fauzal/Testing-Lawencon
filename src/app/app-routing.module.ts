@@ -1,15 +1,11 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 
-const movieModule = () => import('./movie/movie.module').then(x => x.MovieModule)
-const profileModule = () => import('./fungsi/fungsi.module').then(x => x.FungsiModule)
+const productModule = () => import('./product/product.module').then(x => x.ProductModule)
 
 const routes: Routes = [
-    { path: '', redirectTo: '/movie', pathMatch: 'full' },
-    { path: 'movie', loadChildren: movieModule},
-    { path: 'fungsi', loadChildren: profileModule,},
-
-    // otherwise redirect to movie
+    { path: '', redirectTo: '/product', pathMatch: 'full' },
+    { path: 'product', loadChildren: productModule},
     { path: '**', redirectTo: '' }
 ]
 

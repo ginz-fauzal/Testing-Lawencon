@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core'
 import { ReactiveFormsModule,FormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common'
 
-import { MovieRoutingModule } from './movie-routing.module'
-import { MovieComponent } from './movie.component'
-import { MovieDetailComponent } from './movie-detail.component'
+import { ProductRoutingModule } from './product-routing.module'
+import { ProductComponent } from './product.component'
 import { LayoutComponent } from './layout.component'
 import { SharedModule } from '../shared.module'
 
@@ -13,13 +12,12 @@ import { SharedModule } from '../shared.module'
         CommonModule,
         ReactiveFormsModule,
         FormsModule,
-        MovieRoutingModule,
+        ProductRoutingModule,
         SharedModule
     ],
     declarations: [
         LayoutComponent,
-        MovieComponent,
-        MovieDetailComponent
+        ProductComponent
     ]
 })
-export class MovieModule { }
+export class ProductModule { }

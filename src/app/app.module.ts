@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module'
 import { SharedModule } from './shared.module'
 import { AppComponent } from './app.component'
-import { LocationStrategy, HashLocationStrategy } from '@angular/common'
+import { LocationStrategy, PathLocationStrategy } from '@angular/common'
 
 @NgModule({
     imports: [
@@ -21,7 +21,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common'
         AppComponent,
     ],
     providers: [
-        { provide: LocationStrategy, useClass: HashLocationStrategy },
+        { provide: LocationStrategy, useClass: PathLocationStrategy },
     ],
     bootstrap: [AppComponent],
       
