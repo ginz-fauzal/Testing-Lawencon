@@ -1,4 +1,5 @@
-﻿<section class="list-movie">
+﻿
+<section class="list-movie">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
@@ -6,6 +7,7 @@
         <h2 class="text-center text">Product List</h2>
       </div>
     </div>
+    <alert [alert]="alert"></alert>
     <div class="row">
       <div *ngFor="let item of data" class="col-sm-3">
         <div class="card">

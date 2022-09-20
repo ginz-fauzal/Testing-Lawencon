@@ -2,13 +2,14 @@
 import { first } from 'rxjs/operators'
 import { APIService } from '../_services'
 
-@Component({ templateUrl: 'product.component.html' })
+@Component({ templateUrl: 'product.component.html'})
 export class ProductComponent implements OnInit {
     
     data:any=[]
     temp:any=[]
 
     limit:number=10
+    alert:any=[]
 
     constructor(
         public api: APIService,
@@ -34,9 +35,11 @@ export class ProductComponent implements OnInit {
 
     clearData() {
         this.data=[]
+        this.alert.push({"message":"List product berhasil dihapus.","class":"alert-success"})
     }
 
     loadData(){
+        this.alert.push({"message":"List product berhasil tampilkan.","class":"alert-success"})
         this.limit=10
         this.getData()
     }
